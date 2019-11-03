@@ -1,0 +1,9 @@
+<div class="book-menu">
+    <ul>
+        <li *ngFor="let item of mainMenu"><a href="{{ item.link }}">{{ item.name }}</a>
+            <ul *ngIf="item.submenu">
+                <li *ngFor="let subitem of item.submenu"><a href="{{ subitem.link }}">{{ subitem.name }}</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

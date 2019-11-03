@@ -1,0 +1,15 @@
+.app-wrapper {
+  width: 1120px;
+  margin: 0 auto;
+}
+
+.book {
+  &-header {
+    height: 40px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    &__logo{
+      width: 10px;
+    }
+  }
+}
