@@ -1,0 +1,24 @@
+ul {margin: 0;}
+a {text-decoration: none; display: block;}
+
+.main-menu {
+    &__li{
+        list-style: none;
+        float: left;
+    }
+
+    &__a{
+        padding: 10px 15px;
+        position: relative;
+
+        &--icon::after{
+            content: "";
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 5px solid #24375B;
+            position: absolute;
+            top: 50%;
+            right: 5px;
+        }
+    }
+}

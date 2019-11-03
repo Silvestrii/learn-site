@@ -5,11 +5,13 @@ import { AppRoutingModule } from './book-routing.module';
 import { BookComponent } from './book.component';
 import { BookMainMenuComponent } from './components/book-main-menu/book-main-menu.component';
 import { BookMainMenuModule } from './components/book-main-menu/book-main-menu.module';
+import { BookLanguachComponent } from './components/book-languach/book-languach.component';
 
 @NgModule({
   declarations: [
     BookComponent,
-    BookMainMenuComponent
+    BookMainMenuComponent,
+    BookLanguachComponent
   ],
   imports: [
     BrowserModule,
