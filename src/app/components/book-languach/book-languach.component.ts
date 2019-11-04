@@ -1,30 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ILanguach } from 'src/app/entities/ILanguach';
+import { Subscription } from 'rxjs';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'book-book-languach',
   templateUrl: './book-languach.component.html',
   styleUrls: ['./book-languach.component.scss']
 })
-export class BookLanguachComponent implements OnInit {
+export class BookLanguachComponent implements OnInit, OnDestroy {
 
   public langs: ILanguach[];
-  constructor() { 
-    this.langs = [
-      {
-        code: 1234,
-        name: "русский",
-        img: "/.."
-      },
-      {
-        code: 2345,
-        name: "english",
-        img: "/.."
-      }
-    ];
+  private subscription: Subscription;
+  constructor(private commonService: CommonService) { }
+
+  public ngOnInit() {
+    setTimeout(() => {
+      this.langs = this.commonService.getDataTranslate("MAIN_LANGUAGE_SELECT");
+    }, 100); 
   }
 
-  ngOnInit() {
+  public onChange(event: any) {
+    let domain = event.target.value;
+    this.commonService.setDataTranslate(domain);
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }

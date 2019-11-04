@@ -1,5 +1,5 @@
-<select class="header__languach">
-    <option *ngFor="let item of langs" value="{{ item.code }}">
-        <label for=""><img src="{{ item.img }}" class="languach__img"><span class="languach__name">{{ item.name }}</span></label>
+<select class="header__languach" (change)="onChange($event)">
+    <option *ngFor="let item of langs" value="{{ item.domain }}">
+        <label for=""><img class="languach__img"><span class="languach__name">{{ item.name }}</span></label>
     </option>
 </select>

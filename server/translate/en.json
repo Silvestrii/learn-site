@@ -1,0 +1,57 @@
+{
+    "MAIN_MENU_NAME": [
+        {
+          "name": "Main",
+          "link": "/"
+        },
+        {
+          "name": "Courses",
+          "link": "/course",
+          "submenu": [
+            {
+              "name": "Course1",
+              "link": "/course1"
+            },
+            {
+                "name": "Course2",
+                "link": "/course2"
+            },
+            {
+                "name": "Course3",
+                "link": "/course3"
+            }
+          ]
+        },
+        {
+            "name": "Games",
+          "link": "/game",
+          "submenu": [
+            {
+                "name": "Game1",
+                "link": "/games1"
+            },
+            {
+                "name": "Game2",
+                "link": "/games2"
+            },
+            {
+                "name": "Game3",
+                "link": "/games3"
+            }
+          ]
+        }
+      ],
+    "MAIN_LANGUAGE_SELECT": [
+        {
+          "name": "Russian",
+          "domain": "ru",
+          "url_img": ",,m"
+        },
+        {
+          "name": "English",
+          "domain": "en",
+          "url_img": ",,m"
+        }
+    ],
+    "MAIN_PAGE_TEXT": "text text text text text text text text text text text text text text text "  
+}

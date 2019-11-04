@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, AfterContentChecked } from '@angular/core';
 import { IMenu } from 'src/app/entities/IMainMenu';
-import { BookMainMenuService } from 'src/app/services/book-main-menu.service';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'book-main-menu',
   templateUrl: './book-main-menu.component.html',
   styleUrls: ['./book-main-menu.component.scss']
 })
-export class BookMainMenuComponent implements OnInit{
+export class BookMainMenuComponent implements AfterContentChecked{
 
   public mainMenu: IMenu[];
-  constructor(private bookMenuService: BookMainMenuService) { 
-    
+  constructor(private commonService: CommonService) { 
   }
-
-  public ngOnInit() {
-    this.mainMenu = this.bookMenuService.getMenu();
-    console.log(this.mainMenu);
+  
+  ngAfterContentChecked() {
+    setTimeout(() => {
+      this.mainMenu = this.commonService.getDataTranslate("MAIN_MENU_NAME");
+    }, 100);
   }
 
 }
