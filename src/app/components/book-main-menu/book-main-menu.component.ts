@@ -14,9 +14,9 @@ export class BookMainMenuComponent implements AfterContentChecked{
   }
   
   ngAfterContentChecked() {
-    setTimeout(() => {
-      this.mainMenu = this.commonService.getDataTranslate("MAIN_MENU_NAME");
-    }, 100);
+    // setTimeout(() => {
+    //   this.mainMenu = this.commonService.getDataTranslate("MAIN_MENU_NAME");
+    // }, 100);
   }
 
 }

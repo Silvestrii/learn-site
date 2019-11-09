@@ -1,0 +1,52 @@
+.slider{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    &__wrapper{
+        width: 600px;
+        position: relative;
+    }
+
+    &__lenta{
+        width: 2400px;
+    }
+
+    &__image{
+        width: 600px;
+    }
+
+    &__arrors{
+        border-radius: 50%;
+        border: 2px solid #000000;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 25px);
+    }
+
+    &__arrowRight{
+        right: 50px;
+    }
+
+    &__arrowLeft{
+        left: 50px;
+    }
+
+    &__buttons{
+        position: absolute;
+        bottom: 20px;
+        left: calc(50% - 50px);
+        width: 100px;
+        height: 9px;
+        display: flex;
+    }
+
+    &__button{
+        width: 5px;
+        height: 5px;
+        margin: 0 3px;
+        border-radius: 50%;
+        border: 2px solid #000000;
+    }
+}
+

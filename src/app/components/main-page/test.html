@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title> Страница авторизации</title>
+	
+	
+  </head>  
+  <!------------------------------------------Поля ввода и кнопка отправить--------------------------------------->
+  
+  <body background=Leaves-and-white-background-1920x1200.jpg>
+   <center> <h1>Войдите на сайт</h1>
+ <form method="post" action="/login/">
+    <table>
+	<td>E-mail<td>
+	
+        <input id="emailP" name="email" type="email" placeholder="Введите ваш Е-mail" required><div id="errorMessage"></div>
+		
+        <tr>
+            <td><label for="passwordField">Пароль</label></td>
+            <td><input id="passwordField" type="password" minlength="6"  placeholder="Введите ваш пароль" name="password" symboltype  required ><div id="errorMessage"></div></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center"><input type="submit" value="Войти" id="submit"></td>
+        </tr>
+
+    </table>
+</form>
+</center>
+<!------И вот этот скрипт----->
+<script>
+
+       function validate() {
+	        var emailP = document.getElementById("emailP");
+			var passwordField = document.getElementById("passwordField");
+			
+			if(!emailP.value) {
+            emailP.style.border = "2px solid red";
+			showError("incorrect email");
+	   }
+	   
+	        if(!passwordField.value) {
+			passwordField.style.border = "2px solid red";
+			showError("incorrect password");
+       }
+    }
+	   
+	   function checkPass()
+    {
+    var pass1 = document.getElementById('pass1');
+    var pass2 = document.getElementById('pass2');
+    var message = document.getElementById('error-nwl');
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+
+    if(pass1.value == pass2.value){
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "ok!"
+    }
+    else{
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = " These passwords don't match"
+    }
+	
+    if(pass1.length > 5){
+        pass1.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "character number ok!"
+    }
+    else{
+        pass1.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = " you have to enter at least 6 digit!"
+    }
+}  
+
+document.getElementById("submit").addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    validate();
+})
+</script>
+
+
+
+<script type="text/javascript">
+
+function checkForm() {
+  showError('passwordField', 'Неверно заполнено поле!');
+  return false;
+}
+
+function showError(errorMessage) {
+	var errordiv = document.getElementById("errorMessage");
+	errordiv.innerHTML = errorMessage;
+}
+//-->
+</script>
+
+
+
+<!--------------------------------------------Часы-------------------------------------------------------->
+
+<h4><input type="hidden" id = "Brouser" size="100" name="Brouser"></h4>
+<h4><input type="hidden" id = "DateP"  name="DateP"></h4>
+
+<script>
+DateP.value = new Date().toString();
+</script>  
+
+<!--------------------------------------------Браузер---------------------------------------------------->
+
+<script> 
+
+console.log(navigator.userAgent);                                                            
+if(navigator.userAgent.search(/Firefox/) > 0){
+ Brouser.value = "Firefox";
+ }
+ if(navigator.userAgent.search(/Chrome/) > 0){
+  Brouser.value = "Chrome";
+  }
+if(navigator.userAgent.search(/Edge/) > 0){
+ Brouser.value = "Edge";
+ }
+ const isOpera = !!window.opera
+
+   
+</script>
+
+
+</body>
+
+
+
+
+</html>

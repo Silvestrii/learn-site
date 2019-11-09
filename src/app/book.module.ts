@@ -10,13 +10,15 @@ import { HttpService } from './services/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonService } from './services/common.service';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { BookMainSliderComponent } from './components/book-main-slider/book-main-slider.component';
 
 @NgModule({
   declarations: [
     BookComponent,
     BookMainMenuComponent,
     BookLanguachComponent,
-    MainPageComponent
+    MainPageComponent,
+    BookMainSliderComponent
   ],
   imports: [
     BrowserModule,

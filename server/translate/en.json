@@ -52,6 +52,9 @@
           "domain": "en",
           "url_img": ",,m"
         }
-    ],
-    "MAIN_PAGE_TEXT": "text text text text text text text text text text text text text text text "  
+    ], 
+    "MAIN_PAGE_CONTENT": {
+      "MAIN_PAGE_TEXT": "text text text text text text text text text text text text text text text ",
+      "MAIN_PAGE_TEXT2": "text text text text text text text text text text text text text text text "  
+    }
 }
