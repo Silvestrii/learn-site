@@ -5,14 +5,19 @@
     &__wrapper{
         width: 600px;
         position: relative;
+        overflow: hidden;
     }
 
     &__lenta{
         width: 2400px;
+        height: 100%;
+        position: absolute;
+        left: 0;
     }
 
     &__image{
         width: 600px;
+        height: 100%;
     }
 
     &__arrors{
@@ -22,6 +27,9 @@
         height: 40px;
         position: absolute;
         top: calc(50% - 25px);
+        background-color: #000;
+        opacity: 0.5;
+        cursor: pointer;
     }
 
     &__arrowRight{
@@ -35,10 +43,11 @@
     &__buttons{
         position: absolute;
         bottom: 20px;
-        left: calc(50% - 50px);
+        left: calc(50% - 30px);
         width: 100px;
         height: 9px;
         display: flex;
+        justify-content: center;
     }
 
     &__button{

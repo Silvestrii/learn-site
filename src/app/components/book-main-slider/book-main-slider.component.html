@@ -1,12 +1,12 @@
 <div class="slider">
     <div class="slider__wrapper">
-        <div class="slider__lenta">
-            <div class="slider__image"></div>
+        <div class="slider__lenta" id="lenta">
+            <img *ngFor="let image of images" src="{{ image.url }}" alt="{{ image.name }}" class="slider__image">
         </div>
-        <div class="slider__arrowRight slider__arrors"></div>
-        <div class="slider__arrowLeft slider__arrors"></div>
+        <div class="slider__arrowRight slider__arrors" (click)="onClickRight()"></div>
+        <div class="slider__arrowLeft slider__arrors" (click)="onClickLeft()"></div>
         <div class="slider__buttons">
-            <div class="slider__button" *ngFor="let item of [0,1,2,3]"></div>
+            <div class="slider__button" *ngFor="let item of [0,1,2,3]" (click)="onClickCurrentSlide(item)"></div>
         </div>
     </div>
 </div>

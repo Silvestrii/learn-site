@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonService } from './services/common.service';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BookMainSliderComponent } from './components/book-main-slider/book-main-slider.component';
+import { SliderService } from './services/slider.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { BookMainSliderComponent } from './components/book-main-slider/book-main
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [HttpService, CommonService],
+  providers: [HttpService, CommonService, SliderService],
   bootstrap: [BookComponent]
 })
 export class AppModule { }
