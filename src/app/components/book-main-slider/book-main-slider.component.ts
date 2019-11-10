@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SliderService } from 'src/app/services/slider.service';
 import { IImagesSlider } from 'src/app/entities/IImagesSlider';
+import _ from 'lodash';
 
 @Component({
   selector: 'book-main-slider',
@@ -32,6 +33,16 @@ export class BookMainSliderComponent implements OnInit {
         id: 4,
         name: "unity3d",
         url: "assets/images/slider/unity3d.jpg"
+      },
+      {
+        id: 5,
+        name: "CourseCSharp",
+        url: "assets/images/slider/CourseCSharp.jpg"
+      },
+      {
+        id: 6,
+        name: "Js&Css&Html",
+        url: "assets/images/slider/Js&Css&Html.jpg"
       }
     ];
     this.itemImages = 0;
@@ -39,22 +50,21 @@ export class BookMainSliderComponent implements OnInit {
 
   ngOnInit() {
     this.images = this.sliderService.getImagesSlider;
-
     setInterval(() => {
       this.onClickRight()
-    }, 4000);
+    }, 10000);
   }
 
   public onClickRight(): void {
     this.itemImages--;
     let lenta = document.getElementById("lenta");
-    let currentImage = this.itemImages * 600;
+    let currentImage = this.itemImages * 800;
 
     if (this.itemImages === -this.sliderService.getImagesSlider.length) {
       this.itemImages = 0;
     }
 
-    if (currentImage === -2400) {
+    if (currentImage === -4800) {
       lenta.style.left = 0 + 'px';
       return;
     }
@@ -69,14 +79,15 @@ export class BookMainSliderComponent implements OnInit {
       this.itemImages = -this.sliderService.getImagesSlider.length + 1;
     }
 
-    let currentImage = this.itemImages * 600;
+    let currentImage = this.itemImages * 800;
     lenta.style.left = currentImage + 'px';
   }
 
   public onClickCurrentSlide(id: number): void {
-    let currentSlide = id * 600;
+    this.itemImages = -id;
+    let currentSlide = this.itemImages * 800;
     let lenta = document.getElementById("lenta");
-    lenta.style.left = -1 * currentSlide + 'px';
+    lenta.style.left = currentSlide + 'px';
   }
 
 }

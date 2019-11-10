@@ -1,22 +1,23 @@
 .slider{
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     &__wrapper{
-        width: 600px;
+        width: 800px;
         position: relative;
         overflow: hidden;
     }
 
     &__lenta{
-        width: 2400px;
+        width: 4800px;
         height: 100%;
         position: absolute;
         left: 0;
+        transition: .6s;
     }
 
     &__image{
-        width: 600px;
+        width: 800px;
         height: 100%;
     }
 
