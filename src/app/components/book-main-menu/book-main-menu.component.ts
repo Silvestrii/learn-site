@@ -16,6 +16,7 @@ export class BookMainMenuComponent implements OnInit{
   ngOnInit() {
     setTimeout(() => {
       this.mainMenu = this.commonService.getDataTranslate("MAIN_MENU_NAME");
+      console.log(this.mainMenu);
     }, 100);
   }
 
