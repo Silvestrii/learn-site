@@ -15,9 +15,9 @@ export class BookLanguachComponent implements OnInit, OnDestroy {
   constructor(private commonService: CommonService) { }
 
   public ngOnInit() {
-    // setTimeout(() => {
-    //   this.langs = this.commonService.getDataTranslate("MAIN_LANGUAGE_SELECT");
-    // }, 100); 
+    setTimeout(() => {
+      this.langs = this.commonService.getDataTranslate("MAIN_LANGUAGE_SELECT");
+    }, 100); 
   }
 
   public onChange(event: any) {

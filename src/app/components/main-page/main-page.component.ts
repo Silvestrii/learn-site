@@ -8,12 +8,15 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class MainPageComponent implements OnInit {
 
-  private mainContentObject: any;
+  public mainContentObject: any;
   public mainText: string;
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
-    this.mainContentObject = this.commonService.getDataTranslate('MAIN_PAGE_CONTENT');
+    setTimeout(() => {
+      this.mainContentObject = this.commonService.getDataTranslate('MAIN_PAGE_CONTENT');
+      console.log(this.mainContentObject)
+    }, 100);
   }
 
 }

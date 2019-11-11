@@ -9,9 +9,6 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  public getLanguach(): Observable<any> {
-    return this.http.get('http://localhost:8016/langs');
-  }
 
   public getLanguachTranslate(params: HttpParams): Observable<any> {
     return this.http.get('http://localhost:8016/language', {params});
