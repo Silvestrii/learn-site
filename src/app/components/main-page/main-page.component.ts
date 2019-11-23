@@ -13,10 +13,7 @@ export class MainPageComponent implements OnInit {
   constructor(private commonService: CommonService) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.mainContentObject = this.commonService.getDataTranslate('MAIN_PAGE_CONTENT');
-      console.log(this.mainContentObject)
-    }, 100);
+    this.mainContentObject = this.commonService.getDataTranslate().subscribe(response => this.mainContentObject = response["MAIN_PAGE_CONTENT"]);;
   }
 
 }

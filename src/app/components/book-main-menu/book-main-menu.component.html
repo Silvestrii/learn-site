@@ -1,10 +1,10 @@
 <div class="book-menu">
     <ul>
         <li *ngFor="let item of mainMenu" class="main-menu__li">
-            <a href="{{ item.link }}" class="main-menu__a" *ngIf="!item.submenu">{{ item.name }}</a>
-            <a href="{{ item.link }}" class="main-menu__a main-menu__a--icon" *ngIf="item.submenu">{{ item.name }}</a>
+            <a [routerLink]="item.link" class="main-menu__a" *ngIf="!item.submenu">{{ item.name }}</a>
+            <a [routerLink]="item.link" class="main-menu__a main-menu__a--icon" *ngIf="item.submenu">{{ item.name }}</a>
             <ul *ngIf="item.submenu && showSubMenu" class="main-submenu">
-                <li *ngFor="let subitem of item.submenu" class="main-submenu__li"><a href="{{ subitem.link }}" class="main-submenu__a">{{ subitem.name }}</a></li>
+                <li *ngFor="let subitem of item.submenu" class="main-submenu__li"><a [routerLink]="subitem.link" class="main-submenu__a">{{ subitem.name }}</a></li>
             </ul>
         </li>
     </ul>

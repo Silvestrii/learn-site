@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './book-routing.module';
 import { BookComponent } from './book.component';
 import { BookMainMenuComponent } from './components/book-main-menu/book-main-menu.component';
-import { BookMainMenuModule } from './components/book-main-menu/book-main-menu.module';
 import { BookLanguachComponent } from './components/book-languach/book-languach.component';
 import { HttpService } from './services/http.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -12,6 +11,11 @@ import { CommonService } from './services/common.service';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { BookMainSliderComponent } from './components/book-main-slider/book-main-slider.component';
 import { SliderService } from './services/slider.service';
+import { BookGameUnityComponent } from './components/unity3d/book-game-unity/book-game-unity.component';
+import { BookMainMenuService } from './services/book-main-menu.service';
+import { VCourseUnity3dComponent } from './components/unity3d/book-v-course-unity3d/book-v-course-unity3d';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { RegistrationService } from './services/registration.service';
 
 @NgModule({
   declarations: [
@@ -19,15 +23,23 @@ import { SliderService } from './services/slider.service';
     BookMainMenuComponent,
     BookLanguachComponent,
     MainPageComponent,
-    BookMainSliderComponent
+    BookMainSliderComponent,
+    BookGameUnityComponent,
+    VCourseUnity3dComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
-    BookMainMenuModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [HttpService, CommonService, SliderService],
+  providers: [
+    HttpService, 
+    CommonService, 
+    SliderService, 
+    BookMainMenuService,
+    RegistrationService
+  ],
   bootstrap: [BookComponent]
 })
 export class AppModule { }

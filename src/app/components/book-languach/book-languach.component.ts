@@ -8,22 +8,16 @@ import { CommonService } from 'src/app/services/common.service';
   templateUrl: './book-languach.component.html',
   styleUrls: ['./book-languach.component.scss']
 })
-export class BookLanguachComponent implements OnInit, OnDestroy {
+export class BookLanguachComponent{
 
   public langs: ILanguach[];
   private subscription: Subscription;
   constructor(private commonService: CommonService) { }
 
   public ngOnInit() {
-    setTimeout(() => {
-      this.langs = this.commonService.getDataTranslate("MAIN_LANGUAGE_SELECT");
-    }, 100); 
+    this.subscription = this.commonService.getDataTranslate().subscribe(response => this.langs = response["MAIN_LANGUAGE_SELECT"]);
   }
 
-  public onChange(event: any) {
-    let domain = event.target.value;
-    this.commonService.setDataTranslate(domain);
-  }
 
   ngOnDestroy() {
     if (this.subscription) {

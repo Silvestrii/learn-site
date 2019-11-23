@@ -1,0 +1,22 @@
+.game{
+    &__wrapper{
+        display:flex;
+        height: 400px;
+        margin: 0 0 30px;
+    }
+
+    &__unity3d_courses{
+        width: 790px;
+        padding: 0 20px;
+        border-right: 1px solid #eee;
+    }
+
+    &__content{
+        width: 250px;
+        padding: 0 20px;
+        border-left: 1px solid #ccc;
+        &__title{
+            text-align: center;
+        }
+    }
+}

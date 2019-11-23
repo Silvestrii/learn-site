@@ -1,12 +1,12 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpService } from './http.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommonService implements OnDestroy{
+export class CommonService{
 
   private dataTranslate: any;
   private subscribtion: Subscription;
@@ -20,18 +20,10 @@ export class CommonService implements OnDestroy{
       params = new HttpParams().set('nameFile', par);
     }
     
-    this.subscribtion = this.httpService.getLanguachTranslate(params).subscribe((response) => {
-      this.dataTranslate = response;
-    });
+    this.dataTranslate = this.httpService.getLanguachTranslate(params);
   }
 
-  public getDataTranslate(key: string) : any  {
-    return this.dataTranslate[key];
-  }
-
-  ngOnDestroy() {
-    if (this.subscribtion) {
-      this.subscribtion.unsubscribe();
-    }
+  public getDataTranslate() : Observable<any>  {
+    return this.dataTranslate;
   }
 }

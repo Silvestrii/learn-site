@@ -1,0 +1,14 @@
+<div class="game">
+    <div class="game__wrapper">
+        <div class="game__unity3d_courses">
+            <book-v-course-unity3d></book-v-course-unity3d>
+        </div>
+        <div class="game__content">
+            <h3 class="content__title">Содержание.</h3>
+            <p class="content__item" *ngFor="let item of unityContent"><a class="item__link" (click)="onShowDescriptionCourse(item.id)">{{ item.name }}</a></p>
+        </div>
+    </div>
+    <div class="game__description">
+        <div class="game__unity3d-courses">{{ showContent }}</div>
+    </div>
+</div>

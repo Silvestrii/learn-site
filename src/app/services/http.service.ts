@@ -13,4 +13,8 @@ export class HttpService {
   public getLanguachTranslate(params: HttpParams): Observable<any> {
     return this.http.get('http://localhost:8016/language', {params});
   }
+
+  public getPatterns(): Observable<any> {
+    return this.http.get('http://localhost:8016/pattern');
+  }
 }

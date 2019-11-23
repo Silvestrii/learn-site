@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RegistrationService } from './services/registration.service';
 
 @Component({
   selector: 'book-root',
@@ -8,6 +9,10 @@ import { Component } from '@angular/core';
 export class BookComponent{
   title = 'mybook';
 
-  constructor() {
+  constructor(private registrationService: RegistrationService) {
+  }
+
+  ngOnInit() {
+    this.registrationService.getPattern().subscribe();
   }
 }

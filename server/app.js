@@ -55,6 +55,23 @@ app.get('/language', urlencodedParser, (req, res) => {
     console.warn(error);
   });
 });
+
+app.get('/pattern', urlencodedParser, (req, res) => {
+  new Promise((resolve, reject) => {
+
+    file.readFile(`config/patterns.json`, (error, data) => {
+      if (error) {
+        reject(error);
+      }
+
+      resolve(data);
+    });
+  }).then((response) => {
+    res.send(response);
+  }).catch(error => {
+    console.warn(error);
+  });
+});
  
 
 app.listen(8016, function () {

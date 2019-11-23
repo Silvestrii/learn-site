@@ -6,37 +6,37 @@
         },
         {
           "name": "Courses",
-          "link": "/course",
+          "link": "course-unity3d",
           "submenu": [
             {
               "name": "Course1",
-              "link": "/course1"
+              "link": "course-unity3d"
             },
             {
                 "name": "Course2",
-                "link": "/course2"
+                "link": "course-unity3d"
             },
             {
                 "name": "Course3",
-                "link": "/course3"
+                "link": "course-unity3d"
             }
           ]
         },
         {
             "name": "Games",
-          "link": "/game",
+          "link": "course-unity3d",
           "submenu": [
             {
                 "name": "Game1",
-                "link": "/games1"
+                "link": "course-unity3d"
             },
             {
                 "name": "Game2",
-                "link": "/games2"
+                "link": "course-unity3d"
             },
             {
                 "name": "Game3",
-                "link": "/games3"
+                "link": "course-unity3d"
             }
           ]
         }

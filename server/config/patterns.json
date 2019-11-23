@@ -1,0 +1,14 @@
+[
+    {
+        "patternId": "DecimalNumber",
+        "pattern": "/^/d+([,.]/d+)?$/"
+    },
+    {
+        "patternId": "FirstName",
+        "pattern": "/^/d+([,.]/d+)?$/"
+    },
+    {
+        "patternId": "LastName",
+        "pattern": "/^/d+([,.]/d+)?$/"
+    }
+]
